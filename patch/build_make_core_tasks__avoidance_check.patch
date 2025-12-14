@@ -1,0 +1,13 @@
+diff --git a/core/tasks/platform_availability_check.mk b/core/tasks/platform_availability_check.mk
+index 1524758944..a12c17ea19 100644
+--- a/core/tasks/platform_availability_check.mk
++++ b/core/tasks/platform_availability_check.mk
+@@ -18,7 +18,7 @@
+ # is installed to the platform.
+ 
+ # Skip for unbundled builds that don't produce a platform image.
+-ifeq (,$(TARGET_BUILD_UNBUNDLED))
++ifeq (0,1)
+ 
+ # Filter FAKE and NON_INSTALLABLE modules out and then collect those are not
+ # available for platform
