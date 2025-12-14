@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest>
+	<remote name="gitlab" fetch="https://gitlab.com" />
+	<!-- Device Tree-->
+	<project path="device/xiaomi/renoir" name="renoir-cememer-test/android_device_xiaomi_renoir" revision="16.0" remote="github" />
+	<project path="device/xiaomi/sm8350-common" name="renoir-cememer-test/android_device_xiaomi_sm8350-common" revision="16.0" remote="github" />
+	<project path="hardware/xiaomi" name="crdroidandroid/android_hardware_xiaomi" revision="16.0" remote="github" />
+	
+	<!-- Kernel -->
+	<project path="kernel/xiaomi/sm8350" name="renoir-cememer-test/android_kernel_xiaomi_sm8350" revision="16.0" remote="github" />
+
+	<!-- vendor -->
+	<project path="vendor/xiaomi/renoir" name="renoir-cememer-test/proprietary_vendor_xiaomi_renoir" revision="16.0" remote="github" />
+	<project path="vendor/xiaomi/sm8350-common" name="renoir-cememer-test/proprietary_vendor_xiaomi_sm8350-common" revision="16.0" remote="github" />
+</manifest>
