@@ -4,7 +4,9 @@
 ## このDevice Treeでの機能
 - crDroid 12.x (Android 16)
   - LineageOS系統であれば、おそらく他のROMもビルド可能？
+  - (2026/01/03) Android 16 QPR1に対応しました。QPR0は16.0-oldブランチをご利用ください。
 - KernelSU Next v1.1.1 + SUSFS v1.5.5
+  - KernelSU Next v3.0.0への対応は、v5.4のカーネルでは起動しないという報告がいくつか上がっているため保留中です。
 - 日本版への最適化
   - 端末情報を`M2101K9R`として設定
   - 技適表示 (保証なし)
