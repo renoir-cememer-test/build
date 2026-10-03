@@ -3,14 +3,15 @@
 
 ## このDevice Treeでの機能
 - crDroid 12.x (Android 16)
-  - LineageOS系統であれば、おそらく他のROMもビルド可能？
-  - (2026/01/03) Android 16 QPR1に対応しました。QPR0は16.0-oldブランチをご利用ください。
-- KernelSU Next v1.1.1 + SUSFS v1.5.5
-  - KernelSU Next v3.0.0への対応は、v5.4のカーネルでは起動しないという報告がいくつか上がっているため保留中です。
+  - LineageOS系統であれば、おそらく他のROMもビルド可能
+  - (2026/9/28) QPR2まで対応
+- ReSukiSU + SUSFS
+  - QPR2より非GKIデバイスと互換性の高いReSukiSUに変更しました
+  - パッチは[JackA1ltman/NonGKI_Kernel_Build_2nd](https://github.com/JackA1ltman/NonGKI_Kernel_Build_2nd)を使用
 - 日本版への最適化
   - 端末情報を`M2101K9R`として設定
+  - おサイフケータイ対応
   - 技適表示 (保証なし)
-  - おサイフケータイの構成 (未検証)
 
 ## 使用上の注意
 **カスタムROMは自己責任で使用してください。**
@@ -19,20 +20,20 @@
 
 **カスタムROMやDevice Treeの使用に起因するデータ損失等の損害について、一切保証いたしません。また、各機能は「現状のまま」提供され、Cememerは一切の責任を負いません。**
 
-おサイフケータイアプリは利用可能ですが、**実際に非接触決済ができるかは未検証です。**
+おサイフケータイアプリは利用可能ですが、**実際に非接触決済ができるかは保証しません。**
 
 GAPPSの導入などは各自で行ってください。
 
 ## ビルド上の注意点
-`local_manifests`は、このリポジトリにある物を使用するとビルドできるかと思います。
+このリポジトリにある`local_manifests`を使用するとビルドできるかと思います。
 
-ただし、そのままではavailability checkでエラーが発生するため、`build_make_core_tasks__avoidance_check.patch`を適用して、エラーを抑制させる必要があります。
+ただし、そのままで`はavailability check`でエラーが発生するため、`build_make_core_tasks__avoidance_check.patch`を適用してエラーを抑制させる必要があります。
 
-`packages_apps_Settings__enable_regulatory_info.patch`は、設定で技適(規制ラベル)表示を表示させるパッチです。(DeviceTreeに規制ラベル表示を設定してもうまく統合されないようです...)
+`packages_apps_Settings__enable_regulatory_info.patch`は、設定で技適(規制ラベル)表示を表示させるパッチです。(Device Treeで規制ラベルを設定するだけではうまく統合されませんでした)
 
 ## Credits
 - @xiaomi-lisa-devs
-  - SM8350共通コンポーネントのベース、Android 16対応
+  - SM8350共通コンポーネントのベース、Android 16/17対応
 - @felica-droid
   - 日本版への最適化
 - @LineageOS
@@ -40,3 +41,5 @@ GAPPSの導入などは各自で行ってください。
   - LineageOS/android_device_xiaomi_sm8350-common
   - LineageOS/android_kernel_xiaomi_sm8350
     - LineageOS/android_kernel_qcom_sm8350
+- [JackA1ltman/NonGKI_Kernel_Build_2nd](https://github.com/JackA1ltman/NonGKI_Kernel_Build_2nd)
+  - ReSukiSU/SUSFSの統合パッチ
