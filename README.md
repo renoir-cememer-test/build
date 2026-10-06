@@ -25,14 +25,14 @@
 GAPPSの導入などは各自で行ってください。
 
 ## ビルド上の注意点
-このリポジトリにある`local_manifests`を使用し、patch/内のパッチを当てるとビルドビルドできるかと思います。
+このリポジトリにある`local_manifests`を使用し、patch/内のパッチを当てるとビルドできるかと思います。
 
 ### パッチについて
 
 - build_make_core_tasks__avoidance_check.patch
   - `availability check`エラー抑制
 - packages_apps_Settings__enable_regulatory_info.patch
-  - 設定で技適(規制ラベル)表示を表示させるパッチ (device_xiaomi_renoirで規制ラベルを設定するだけではうまく統合されませんでした)
+  - 設定で技適(規制ラベル)を表示させるパッチ (device_xiaomi_renoirで規制ラベルを設定するだけではうまく統合されませんでした)
 - kernel_xiaomi_sm8350__commentout_hooks_error.patch
   - KSUの手動フック未設定の警告によるカーネルビルドエラー抑制 (必要なパッチはkernel_xiaomi_sm8350に適用済)
 
